@@ -5,7 +5,8 @@ Pipeline completo que coleta indicadores educacionais do **World Bank**
 Python, gera **insights executivos com IA (Claude)** e orquestra todo o
 fluxo com **n8n** — do gatilho ao relatório final salvo em disco.
 
-> **Com pressa** Veja [`QUICKSTART.md`](QUICKSTART.md)
+> **Com pressa?** 
+Veja [`QUICKSTART.md`](QUICKSTART.md)
 > e rode `python run_demo.py` — um único comando faz tudo (instala
 > dependências, busca os dados, roda a análise e gera o relatório),
 > nunca trava mesmo sem internet (cai para o dataset de amostra
