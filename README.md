@@ -399,17 +399,6 @@ Depois de publicado:
 3. Confira se `.env` **não** aparece no repositório (também já está no `.gitignore` — nunca suba sua chave da API).
 4. Grave o vídeo (5-10 min, ver roteiro sugerido abaixo), publique no YouTube (pode ser "não listado") e cole o link na mesma tabela.
 
-### Roteiro sugerido para o vídeo
-
-1. **(1 min)** Contexto: o que o projeto faz, dataset do World Bank.
-2. **(2 min)** Mostrar a estrutura do repositório no GitHub e o código Python rodando (`python run_demo.py`).
-3. **(3 min)** Mostrar o n8n (local ou Cloud) rodando ao vivo: gatilho → busca dados → IA → gráficos → relatório/e-mail chegando.
-4. **(2 min)** Abrir o relatório e comentar 2-3 insights reais gerados pela IA.
-5. **(1 min)** Mostrar a pasta `skills/` e explicar o que a Skill faz.
-6. **(1 min)** Fechamento: como o Claude foi usado no desenvolvimento (ver seção correspondente neste README).
-
----
-
 ## Créditos
 
 Baseado no notebook original *"How to Query the World Bank: Education
