@@ -1,0 +1,708 @@
+{
+  "period_covered": {
+    "min_year": 2010,
+    "max_year": 2022
+  },
+  "countries_analyzed": [
+    "Argentina",
+    "Brazil",
+    "China",
+    "Germany",
+    "India",
+    "Japan",
+    "Nigeria",
+    "Portugal",
+    "South Africa",
+    "United States"
+  ],
+  "indicators_analyzed": [
+    "SE.ADT.LITR.ZS",
+    "SE.PRM.ENRR",
+    "SE.SEC.ENRR",
+    "SE.TER.ENRR",
+    "SE.XPD.TOTL.GB.ZS",
+    "SE.XPD.TOTL.GD.ZS"
+  ],
+  "top_growth": [
+    {
+      "country_name": "Nigeria",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": 62.66,
+      "cagr_pct": 4.14,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "China",
+      "indicator_code": "SE.TER.ENRR",
+      "pct_change": 46.2,
+      "cagr_pct": 3.22,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "China",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": 35.81,
+      "cagr_pct": 2.58,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "India",
+      "indicator_code": "SE.TER.ENRR",
+      "pct_change": 32.88,
+      "cagr_pct": 2.4,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "Nigeria",
+      "indicator_code": "SE.TER.ENRR",
+      "pct_change": 31.28,
+      "cagr_pct": 2.29,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.TER.ENRR",
+      "pct_change": 23.32,
+      "cagr_pct": 1.76,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "South Africa",
+      "indicator_code": "SE.TER.ENRR",
+      "pct_change": 18.63,
+      "cagr_pct": 1.43,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.XPD.TOTL.GB.ZS",
+      "pct_change": 11.77,
+      "cagr_pct": 0.93,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "Nigeria",
+      "indicator_code": "SE.SEC.ENRR",
+      "pct_change": 11.57,
+      "cagr_pct": 0.92,
+      "trend": "evoluiu"
+    },
+    {
+      "country_name": "India",
+      "indicator_code": "SE.XPD.TOTL.GB.ZS",
+      "pct_change": 11.3,
+      "cagr_pct": 0.9,
+      "trend": "evoluiu"
+    }
+  ],
+  "top_decline": [
+    {
+      "country_name": "Japan",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": -36.03,
+      "cagr_pct": -3.66,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "India",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": -11.63,
+      "cagr_pct": -1.02,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "Argentina",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": -9.13,
+      "cagr_pct": -0.79,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "United States",
+      "indicator_code": "SE.XPD.TOTL.GB.ZS",
+      "pct_change": -6.04,
+      "cagr_pct": -0.52,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "Portugal",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": -5.87,
+      "cagr_pct": -0.5,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "Japan",
+      "indicator_code": "SE.XPD.TOTL.GB.ZS",
+      "pct_change": -4.87,
+      "cagr_pct": -0.41,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "Nigeria",
+      "indicator_code": "SE.XPD.TOTL.GB.ZS",
+      "pct_change": -4.31,
+      "cagr_pct": -0.37,
+      "trend": "regrediu"
+    },
+    {
+      "country_name": "South Africa",
+      "indicator_code": "SE.PRM.ENRR",
+      "pct_change": -2.5,
+      "cagr_pct": -0.21,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.PRM.ENRR",
+      "pct_change": -1.0,
+      "cagr_pct": -0.08,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "India",
+      "indicator_code": "SE.PRM.ENRR",
+      "pct_change": -0.76,
+      "cagr_pct": -0.06,
+      "trend": "estagnado"
+    }
+  ],
+  "stagnant_examples": [
+    {
+      "country_name": "Argentina",
+      "indicator_code": "SE.ADT.LITR.ZS",
+      "pct_change": 1.47,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Argentina",
+      "indicator_code": "SE.PRM.ENRR",
+      "pct_change": -0.62,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Argentina",
+      "indicator_code": "SE.SEC.ENRR",
+      "pct_change": 0.24,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Argentina",
+      "indicator_code": "SE.XPD.TOTL.GB.ZS",
+      "pct_change": 0.42,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.ADT.LITR.ZS",
+      "pct_change": 1.55,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.PRM.ENRR",
+      "pct_change": -1.0,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.SEC.ENRR",
+      "pct_change": 0.88,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "Brazil",
+      "indicator_code": "SE.XPD.TOTL.GD.ZS",
+      "pct_change": 1.55,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "China",
+      "indicator_code": "SE.ADT.LITR.ZS",
+      "pct_change": 2.92,
+      "trend": "estagnado"
+    },
+    {
+      "country_name": "China",
+      "indicator_code": "SE.PRM.ENRR",
+      "pct_change": 0.79,
+      "trend": "estagnado"
+    }
+  ],
+  "top_investment_pct_gdp": [
+    {
+      "country_name": "South Africa",
+      "mean_value": 5.996153846153846
+    },
+    {
+      "country_name": "Brazil",
+      "mean_value": 5.796153846153846
+    },
+    {
+      "country_name": "Portugal",
+      "mean_value": 4.991538461538462
+    },
+    {
+      "country_name": "United States",
+      "mean_value": 4.964615384615384
+    },
+    {
+      "country_name": "Germany",
+      "mean_value": 4.647307692307693
+    },
+    {
+      "country_name": "Argentina",
+      "mean_value": 4.626153846153846
+    },
+    {
+      "country_name": "India",
+      "mean_value": 4.3234615384615385
+    },
+    {
+      "country_name": "China",
+      "mean_value": 3.843461538461539
+    },
+    {
+      "country_name": "Japan",
+      "mean_value": 3.32
+    },
+    {
+      "country_name": "Nigeria",
+      "mean_value": 2.0538461538461537
+    }
+  ],
+  "rankings_by_indicator": {
+    "SE.ADT.LITR.ZS": [
+      {
+        "rank": 1,
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "year": 2022,
+        "value": 99.66
+      },
+      {
+        "rank": 2,
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "year": 2022,
+        "value": 99.41
+      },
+      {
+        "rank": 3,
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "year": 2022,
+        "value": 99.03
+      },
+      {
+        "rank": 4,
+        "country_name": "United States",
+        "country_code": "USA",
+        "year": 2022,
+        "value": 98.57
+      },
+      {
+        "rank": 5,
+        "country_name": "China",
+        "country_code": "CHN",
+        "year": 2022,
+        "value": 96.25
+      },
+      {
+        "rank": 6,
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "year": 2022,
+        "value": 95.83
+      },
+      {
+        "rank": 7,
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "year": 2022,
+        "value": 92.22
+      },
+      {
+        "rank": 8,
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "year": 2022,
+        "value": 88.92
+      },
+      {
+        "rank": 9,
+        "country_name": "India",
+        "country_code": "IND",
+        "year": 2022,
+        "value": 71.25
+      },
+      {
+        "rank": 10,
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "year": 2022,
+        "value": 63.57
+      }
+    ],
+    "SE.PRM.ENRR": [
+      {
+        "rank": 1,
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "year": 2022,
+        "value": 110.51
+      },
+      {
+        "rank": 2,
+        "country_name": "India",
+        "country_code": "IND",
+        "year": 2022,
+        "value": 106.39
+      },
+      {
+        "rank": 3,
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "year": 2022,
+        "value": 104.1
+      },
+      {
+        "rank": 4,
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "year": 2022,
+        "value": 103.27
+      },
+      {
+        "rank": 5,
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "year": 2022,
+        "value": 102.47
+      },
+      {
+        "rank": 6,
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "year": 2022,
+        "value": 101.2
+      },
+      {
+        "rank": 7,
+        "country_name": "United States",
+        "country_code": "USA",
+        "year": 2022,
+        "value": 101.1
+      },
+      {
+        "rank": 8,
+        "country_name": "China",
+        "country_code": "CHN",
+        "year": 2022,
+        "value": 100.88
+      },
+      {
+        "rank": 9,
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "year": 2022,
+        "value": 96.44
+      },
+      {
+        "rank": 10,
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "year": 2022,
+        "value": 86.3
+      }
+    ],
+    "SE.SEC.ENRR": [
+      {
+        "rank": 1,
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "year": 2022,
+        "value": 109.29
+      },
+      {
+        "rank": 2,
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "year": 2022,
+        "value": 100.39
+      },
+      {
+        "rank": 3,
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "year": 2022,
+        "value": 99.95
+      },
+      {
+        "rank": 4,
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "year": 2022,
+        "value": 99.43
+      },
+      {
+        "rank": 5,
+        "country_name": "United States",
+        "country_code": "USA",
+        "year": 2022,
+        "value": 97.94
+      },
+      {
+        "rank": 6,
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "year": 2022,
+        "value": 96.97
+      },
+      {
+        "rank": 7,
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "year": 2022,
+        "value": 94.25
+      },
+      {
+        "rank": 8,
+        "country_name": "China",
+        "country_code": "CHN",
+        "year": 2022,
+        "value": 92.18
+      },
+      {
+        "rank": 9,
+        "country_name": "India",
+        "country_code": "IND",
+        "year": 2022,
+        "value": 77.44
+      },
+      {
+        "rank": 10,
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "year": 2022,
+        "value": 48.23
+      }
+    ],
+    "SE.TER.ENRR": [
+      {
+        "rank": 1,
+        "country_name": "United States",
+        "country_code": "USA",
+        "year": 2022,
+        "value": 88.24
+      },
+      {
+        "rank": 2,
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "year": 2022,
+        "value": 80.79
+      },
+      {
+        "rank": 3,
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "year": 2022,
+        "value": 69.99
+      },
+      {
+        "rank": 4,
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "year": 2022,
+        "value": 63.63
+      },
+      {
+        "rank": 5,
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "year": 2022,
+        "value": 62.29
+      },
+      {
+        "rank": 6,
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "year": 2022,
+        "value": 36.49
+      },
+      {
+        "rank": 7,
+        "country_name": "China",
+        "country_code": "CHN",
+        "year": 2022,
+        "value": 36.2
+      },
+      {
+        "rank": 8,
+        "country_name": "India",
+        "country_code": "IND",
+        "year": 2022,
+        "value": 27.12
+      },
+      {
+        "rank": 9,
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "year": 2022,
+        "value": 22.16
+      },
+      {
+        "rank": 10,
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "year": 2022,
+        "value": 12.38
+      }
+    ],
+    "SE.XPD.TOTL.GB.ZS": [
+      {
+        "rank": 1,
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "year": 2022,
+        "value": 18.5
+      },
+      {
+        "rank": 2,
+        "country_name": "China",
+        "country_code": "CHN",
+        "year": 2022,
+        "value": 16.25
+      },
+      {
+        "rank": 3,
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "year": 2022,
+        "value": 15.67
+      },
+      {
+        "rank": 4,
+        "country_name": "India",
+        "country_code": "IND",
+        "year": 2022,
+        "value": 14.77
+      },
+      {
+        "rank": 5,
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "year": 2022,
+        "value": 14.31
+      },
+      {
+        "rank": 6,
+        "country_name": "United States",
+        "country_code": "USA",
+        "year": 2022,
+        "value": 12.76
+      },
+      {
+        "rank": 7,
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "year": 2022,
+        "value": 11.16
+      },
+      {
+        "rank": 8,
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "year": 2022,
+        "value": 9.58
+      },
+      {
+        "rank": 9,
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "year": 2022,
+        "value": 9.35
+      },
+      {
+        "rank": 10,
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "year": 2022,
+        "value": 7.33
+      }
+    ],
+    "SE.XPD.TOTL.GD.ZS": [
+      {
+        "rank": 1,
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "year": 2022,
+        "value": 5.89
+      },
+      {
+        "rank": 2,
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "year": 2022,
+        "value": 5.68
+      },
+      {
+        "rank": 3,
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "year": 2022,
+        "value": 5.61
+      },
+      {
+        "rank": 4,
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "year": 2022,
+        "value": 5.55
+      },
+      {
+        "rank": 5,
+        "country_name": "United States",
+        "country_code": "USA",
+        "year": 2022,
+        "value": 5.06
+      },
+      {
+        "rank": 6,
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "year": 2022,
+        "value": 4.68
+      },
+      {
+        "rank": 7,
+        "country_name": "China",
+        "country_code": "CHN",
+        "year": 2022,
+        "value": 4.02
+      },
+      {
+        "rank": 8,
+        "country_name": "India",
+        "country_code": "IND",
+        "year": 2022,
+        "value": 3.8
+      },
+      {
+        "rank": 9,
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "year": 2022,
+        "value": 3.0
+      },
+      {
+        "rank": 10,
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "year": 2022,
+        "value": 2.57
+      }
+    ]
+  }
+}

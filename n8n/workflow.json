@@ -1,0 +1,144 @@
+{
+  "name": "Agente de Monitoramento Educacional - World Bank",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 1,
+              "triggerAtHour": 7,
+              "triggerAtDay": [1]
+            }
+          ]
+        }
+      },
+      "id": "trigger-schedule",
+      "name": "Agendamento Semanal (Segunda 07h)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-200, 300]
+    },
+    {
+      "parameters": {},
+      "id": "trigger-manual",
+      "name": "Executar Manualmente (teste)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-200, 460]
+    },
+    {
+      "parameters": {
+        "command": "=cd /d {{$env.PROJECT_PATH || 'C:\\caminho\\para\\wb-edu-agent'}} && python -m src.fetch_worldbank_data && python -m src.pipeline"
+      },
+      "id": "execute-pipeline",
+      "name": "Consultar World Bank + Rodar Pipeline",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [40, 380],
+      "notes": "1) src/fetch_worldbank_data.py consulta a API pública do World Bank (mesma fonte do dataset do Kaggle) e salva data/raw/international_education.csv. 2) src/pipeline.py roda a limpeza, tratamento de ausentes, agregações, rankings e cálculo de crescimento, gerando o CSV final + summary_for_ai.json. IMPORTANTE (Windows): ajuste PROJECT_PATH para o caminho real do projeto na sua máquina, ex: C:\\Users\\Bruno\\Desktop\\Aceleradoras\\IA\\Entrega\\wb-edu-agent. Se estiver em Linux/Mac, troque 'python' por 'python3' e 'cd /d' por apenas 'cd'."
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{$env.PROJECT_PATH || 'C:\\caminho\\para\\wb-edu-agent'}}\\data\\processed\\summary_for_ai.json",
+        "options": {}
+      },
+      "id": "read-summary",
+      "name": "Ler summary_for_ai.json",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [260, 380]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Monta o prompt para a IA a partir do resumo gerado pelo pipeline Python\nconst fileContent = $input.first().binary.data\n  ? Buffer.from($input.first().binary.data.data, 'base64').toString('utf-8')\n  : $input.first().json.data;\n\nconst summary = JSON.parse(fileContent);\n\nconst systemPrompt = `Você é um analista sênior de políticas educacionais internacionais, atuando para um organismo multilateral. Sua função é interpretar indicadores educacionais de diferentes países e produzir inteligência acionável para tomadores de decisão — não apenas descrever números.\n\nRegras obrigatórias:\n- Nunca apenas repita ou resuma os números recebidos; sempre acrescente interpretação, hipóteses causais plausíveis e implicações práticas.\n- Identifique explicitamente: países que mais evoluíram, países estagnados ou em regressão, países com maior investimento relativo, países com melhores indicadores absolutos.\n- Para cada padrão identificado, proponha possíveis explicações (ex: crises econômicas, reformas educacionais, mudanças demográficas) deixando claro quando é hipótese e não fato comprovado pelos dados.\n- Termine com recomendações concretas e priorizadas.\n- Seja direto, use linguagem executiva, evite jargão técnico desnecessário.`;\n\nconst userPrompt = `Abaixo está um resumo estruturado (JSON) com indicadores educacionais de múltiplos países, já processados (rankings, crescimento, agregações).\n\nGere um RELATÓRIO EXECUTIVO em Markdown com as seções:\n\n1. Panorama geral (2-3 parágrafos)\n2. Países em destaque (maior evolução, com hipóteses do porquê)\n3. Países estagnados ou em regressão (com hipóteses do porquê)\n4. Investimento vs. resultado (quem investe mais e o retorno aparente)\n5. Comparações relevantes entre países\n6. Recomendações (priorizadas, acionáveis)\n\nDados:\n\\`\\`\\`json\n${JSON.stringify(summary, null, 2)}\n\\`\\`\\``;\n\nreturn [{\n  json: {\n    model: 'claude-sonnet-4-6',\n    max_tokens: 4000,\n    system: systemPrompt,\n    messages: [{ role: 'user', content: userPrompt }]\n  }\n}];"
+      },
+      "id": "build-prompt",
+      "name": "Montar Prompt para a IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 380]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "call-claude",
+      "name": "Chamar API do Claude (análise executiva)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 380],
+      "notes": "Credencial 'httpHeaderAuth' deve conter o header 'x-api-key' com a ANTHROPIC_API_KEY. Configurar em Credentials > Header Auth no n8n."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrai o texto do relatório da resposta da API do Claude\nconst response = $input.first().json;\nconst textBlocks = (response.content || []).filter(b => b.type === 'text');\nconst reportText = textBlocks.map(b => b.text).join('\\n');\n\nconst timestamp = new Date().toISOString().slice(0, 10);\nconst header = `# Relatório Executivo - Indicadores Educacionais\\n\\n_Gerado automaticamente em ${timestamp}_\\n\\n---\\n\\n`;\n\nreturn [{\n  json: {\n    fileName: `executive_report_${timestamp}.md`,\n    content: header + reportText\n  }\n}];"
+      },
+      "id": "parse-response",
+      "name": "Extrair Relatório da Resposta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 380]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{$env.PROJECT_PATH || 'C:\\caminho\\para\\wb-edu-agent'}}\\reports\\{{$json.fileName}}",
+        "dataPropertyName": "content",
+        "options": {}
+      },
+      "id": "save-report",
+      "name": "Salvar Relatório em reports/",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1140, 380],
+      "notes": "Armazenamento do resultado final. Alternativa: trocar por nó 'Google Drive' ou 'Slack' para publicar automaticamente."
+    }
+  ],
+  "connections": {
+    "Agendamento Semanal (Segunda 07h)": {
+      "main": [[{ "node": "Rodar Pipeline Python (limpeza + análise)", "type": "main", "index": 0 }]]
+    },
+    "Executar Manualmente (teste)": {
+      "main": [[{ "node": "Rodar Pipeline Python (limpeza + análise)", "type": "main", "index": 0 }]]
+    },
+    "Rodar Pipeline Python (limpeza + análise)": {
+      "main": [[{ "node": "Ler summary_for_ai.json", "type": "main", "index": 0 }]]
+    },
+    "Ler summary_for_ai.json": {
+      "main": [[{ "node": "Montar Prompt para a IA", "type": "main", "index": 0 }]]
+    },
+    "Montar Prompt para a IA": {
+      "main": [[{ "node": "Chamar API do Claude (análise executiva)", "type": "main", "index": 0 }]]
+    },
+    "Chamar API do Claude (análise executiva)": {
+      "main": [[{ "node": "Extrair Relatório da Resposta", "type": "main", "index": 0 }]]
+    },
+    "Extrair Relatório da Resposta": {
+      "main": [[{ "node": "Salvar Relatório em reports/", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Fluxo: gatilho (agendamento ou manual) -> execução do script Python (limpeza, análise, rankings) -> leitura do resumo -> chamada à API do Claude -> extração e armazenamento do relatório executivo final."
+  }
+}

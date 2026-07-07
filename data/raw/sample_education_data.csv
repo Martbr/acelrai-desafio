@@ -1,0 +1,781 @@
+country_name,country_code,indicator_name,indicator_code,year,value
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,5.8
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,5.44
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,5.93
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,6.47
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,5.44
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,5.46
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,6.57
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,6.1
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,5.38
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,6.01
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,5.42
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,5.44
+Brazil,BRA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,5.89
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,14.02
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,14.76
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,14.54
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,15.39
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,14.71
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,16.23
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,15.26
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,15.49
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,14.65
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,15.22
+Brazil,BRA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,15.67
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,104.31
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,105.18
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,104.54
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,104.67
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,105.86
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,104.69
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,104.02
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,103.82
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,104.63
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,103.27
+Brazil,BRA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,96.12
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,96.54
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,96.3
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,96.23
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,96.22
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,95.61
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,96.17
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,96.42
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,97.11
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,97.29
+Brazil,BRA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,96.97
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,29.59
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,30.87
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,31.62
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,32.06
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,31.5
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,32.31
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,33.2
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,34.09
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,33.71
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,34.39
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,34.34
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,34.78
+Brazil,BRA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,36.49
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,90.81
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,90.16
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,91.0
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,90.82
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,90.41
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,91.22
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,92.12
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,90.23
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,92.49
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,92.25
+Brazil,BRA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,92.22
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,5.06
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,3.81
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,4.87
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,5.21
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,5.89
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,4.69
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,4.51
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,4.7
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,5.55
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,5.2
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,4.68
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,5.31
+United States,USA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,5.06
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,13.58
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,12.6
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,12.84
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,12.82
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,12.2
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,13.28
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,13.28
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,13.14
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,13.02
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,12.95
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,13.01
+United States,USA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,12.76
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,100.9
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,101.25
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,102.15
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,101.13
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,101.19
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,101.01
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,99.91
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,101.05
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,101.12
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,102.57
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,100.98
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,101.29
+United States,USA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,101.1
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,97.3
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,98.71
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,98.49
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,98.53
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,97.53
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,98.94
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,97.28
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,98.49
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,99.47
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,97.59
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,97.86
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,98.28
+United States,USA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,97.94
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,87.07
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,88.14
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,87.56
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,88.58
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,87.85
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,88.13
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,88.51
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,89.29
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,88.16
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,89.14
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,89.88
+United States,USA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,88.24
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,99.11
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,99.16
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,99.47
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,98.26
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,98.21
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,99.31
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,99.18
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,99.15
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,99.21
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,98.59
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,99.14
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,99.18
+United States,USA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,98.57
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,5.42
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,4.59
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,3.61
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,3.76
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,4.82
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,5.06
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,3.88
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,4.96
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,4.64
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,4.89
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,5.55
+Germany,DEU,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,9.05
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,9.0
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,9.07
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,9.54
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,9.82
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,9.82
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,10.18
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,9.72
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,10.61
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,9.61
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,11.43
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,10.21
+Germany,DEU,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,9.35
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,102.36
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,103.31
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,102.91
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,103.49
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,103.36
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,102.61
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,102.23
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,103.69
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,103.33
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,102.47
+Germany,DEU,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,99.23
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,98.48
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,99.11
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,99.06
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,98.35
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,99.26
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,99.71
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,98.26
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,98.54
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,99.42
+Germany,DEU,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,99.43
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,65.31
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,67.61
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,65.94
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,66.58
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,66.77
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,66.89
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,66.61
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,67.56
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,66.94
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,67.56
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,67.71
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,68.35
+Germany,DEU,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,69.99
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,97.88
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,99.41
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,98.03
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,98.72
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,99.65
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,99.04
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,98.35
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,98.57
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,99.41
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,98.56
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,99.13
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,99.03
+Germany,DEU,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,4.69
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,3.77
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,2.16
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,3.48
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,2.96
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,3.86
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,2.86
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,3.26
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,3.62
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,3.83
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,2.58
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,3.09
+Japan,JPN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,3.0
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,10.07
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,9.26
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,8.27
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,9.59
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,10.32
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,9.68
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,8.16
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,8.79
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,9.85
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,8.68
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,
+Japan,JPN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,9.58
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,99.94
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,100.46
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,98.56
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,99.89
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,101.48
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,99.64
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,100.24
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,100.58
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,101.36
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,99.64
+Japan,JPN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,101.2
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,100.42
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,101.3
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,101.15
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,100.68
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,101.09
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,100.83
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,101.14
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,101.48
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,102.04
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,102.39
+Japan,JPN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,99.95
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,59.91
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,60.5
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,60.48
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,60.45
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,60.55
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,61.56
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,61.41
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,60.93
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,62.04
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,61.83
+Japan,JPN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,62.29
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,99.38
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,98.66
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,99.37
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,98.99
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,99.07
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,99.77
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,98.65
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,99.33
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,98.88
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,98.87
+Japan,JPN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,99.66
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,4.3
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,4.34
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,4.68
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,3.96
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,4.41
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,3.86
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,4.29
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,4.26
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,4.61
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,3.81
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,5.61
+India,IND,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,3.8
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,13.27
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,14.77
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,14.63
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,14.61
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,14.7
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,14.39
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,13.94
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,14.61
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,14.23
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,15.31
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,14.71
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,14.38
+India,IND,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,14.77
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,107.21
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,107.7
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,107.55
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,106.95
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,106.82
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,107.09
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,105.93
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,105.81
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,106.07
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,
+India,IND,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,106.39
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,70.89
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,71.11
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,71.1
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,71.79
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,71.8
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,72.99
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,73.43
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,74.39
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,74.3
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,75.71
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,76.92
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,76.53
+India,IND,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,77.44
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,20.41
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,20.31
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,21.23
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,21.66
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,22.26
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,22.29
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,23.31
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,24.15
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,25.27
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,25.53
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,26.79
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,25.59
+India,IND,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,27.12
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,65.11
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,66.86
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,65.62
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,66.15
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,66.84
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,66.48
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,67.98
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,68.39
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,69.49
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,70.16
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,71.63
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,71.62
+India,IND,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,71.25
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,2.96
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,2.87
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,4.84
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,4.53
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,3.62
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,2.95
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,4.87
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,4.07
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,4.96
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,3.34
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,4.02
+China,CHN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,15.53
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,15.33
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,16.07
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,15.16
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,15.81
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,16.07
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,16.41
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,16.63
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,15.63
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,15.48
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,16.8
+China,CHN,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,16.25
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,100.09
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,100.75
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,100.1
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,101.32
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,101.15
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,100.72
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,100.55
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,101.0
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,100.63
+China,CHN,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,100.88
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,86.94
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,87.64
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,87.48
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,88.89
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,89.83
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,90.65
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,91.43
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,89.97
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,90.13
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,91.47
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,92.08
+China,CHN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,92.18
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,24.76
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,26.85
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,27.02
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,29.1
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,29.82
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,29.94
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,31.09
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,31.66
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,33.16
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,34.67
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,34.41
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,36.2
+China,CHN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,93.52
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,94.09
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,93.68
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,94.12
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,93.88
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,95.93
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,94.92
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,94.63
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,95.33
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,95.28
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,96.02
+China,CHN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,96.25
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,5.68
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,5.63
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,5.79
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,4.56
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,5.01
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,6.72
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,6.87
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,5.71
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,6.19
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,6.01
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,7.65
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,6.45
+South Africa,ZAF,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,5.68
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,18.43
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,17.99
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,18.4
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,17.95
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,18.36
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,18.05
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,19.66
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,19.13
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,18.55
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,19.39
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,18.5
+South Africa,ZAF,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,98.91
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,98.22
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,97.18
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,97.59
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,97.07
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,96.67
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,97.96
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,98.45
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,97.44
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,96.61
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,96.61
+South Africa,ZAF,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,96.44
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,91.48
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,92.18
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,91.8
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,92.61
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,92.57
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,92.61
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,92.7
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,93.65
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,92.91
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,93.71
+South Africa,ZAF,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,94.25
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,18.68
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,18.3
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,19.39
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,18.94
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,18.67
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,19.12
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,20.48
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,20.96
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,20.61
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,21.88
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,20.85
+South Africa,ZAF,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,22.16
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,86.27
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,86.81
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,87.43
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,87.08
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,87.57
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,88.6
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,87.85
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,88.9
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,87.92
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,89.12
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,89.86
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,87.72
+South Africa,ZAF,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,88.92
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,5.15
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,4.65
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,4.35
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,4.73
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,4.56
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,5.32
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,4.74
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,4.76
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,4.28
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,4.21
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,4.21
+Argentina,ARG,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,4.68
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,14.25
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,14.57
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,15.55
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,14.72
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,13.9
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,14.72
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,13.66
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,12.58
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,13.1
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,12.48
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,13.29
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,13.41
+Argentina,ARG,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,14.31
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,111.2
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,110.82
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,111.4
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,109.52
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,111.21
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,109.81
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,111.34
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,110.8
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,110.3
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,110.88
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,111.81
+Argentina,ARG,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,110.51
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,100.15
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,99.77
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,99.59
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,100.65
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,99.69
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,100.29
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,100.01
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,100.64
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,100.6
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,101.07
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,100.19
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,100.39
+Argentina,ARG,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,77.73
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,78.43
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,78.85
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,78.05
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,79.32
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,79.81
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,80.53
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,79.05
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,78.93
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,81.1
+Argentina,ARG,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,80.79
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,97.97
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,98.22
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,97.42
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,99.62
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,98.28
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,98.32
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,98.74
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,98.64
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,98.53
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,97.98
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,99.68
+Argentina,ARG,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,99.41
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,5.96
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,4.7
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,4.43
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,4.95
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,5.07
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,5.71
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,4.04
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,5.99
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,4.99
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,4.83
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,4.49
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,4.12
+Portugal,PRT,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,5.61
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,10.54
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,9.75
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,9.76
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,10.36
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,11.58
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,10.44
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,9.72
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,10.49
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,10.5
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,9.06
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,10.67
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,10.58
+Portugal,PRT,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,11.16
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,104.69
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,103.86
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,103.37
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,105.58
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,104.09
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,104.07
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,104.06
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,104.2
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,104.0
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,103.76
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,103.78
+Portugal,PRT,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,104.1
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,109.67
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,109.55
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,110.02
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,109.79
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,110.82
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,108.31
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,110.53
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,110.61
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,108.6
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,109.61
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,109.58
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,108.94
+Portugal,PRT,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,109.29
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,61.33
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,63.15
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,62.76
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,63.06
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,62.83
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,61.82
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,62.29
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,62.99
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,62.07
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,63.33
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,62.86
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,62.88
+Portugal,PRT,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,63.63
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,94.27
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,93.88
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,94.9
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,93.65
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,94.77
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,94.86
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,94.05
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,95.45
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,94.89
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,94.79
+Portugal,PRT,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,95.83
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2010,1.58
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2011,1.18
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2012,1.13
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2013,2.45
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2014,1.35
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2015,3.2
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2016,0.93
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2017,3.23
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2018,2.37
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2019,
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2020,1.97
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2021,2.57
+Nigeria,NGA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2022,
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2010,7.66
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2011,
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2012,7.11
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2013,6.81
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2014,7.01
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2015,7.23
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2016,6.03
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2017,6.26
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2018,7.53
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2019,7.19
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2020,
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2021,7.12
+Nigeria,NGA,"Government expenditure on education, total (% of government expenditure)",SE.XPD.TOTL.GB.ZS,2022,7.33
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2010,84.68
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2011,84.73
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2012,85.52
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2013,85.01
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2014,86.04
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2015,84.98
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2016,86.82
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2017,86.68
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2018,86.75
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2019,87.39
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2020,88.0
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2021,87.81
+Nigeria,NGA,"School enrollment, primary (% gross)",SE.PRM.ENRR,2022,86.3
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2010,43.23
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2011,43.93
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2012,
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2013,45.21
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2014,44.76
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2015,
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2016,45.35
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2017,45.73
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2018,45.56
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2019,46.15
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2020,46.19
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2021,
+Nigeria,NGA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,2022,48.23
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2010,9.43
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2011,11.78
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2012,10.7
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2013,10.71
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2014,10.28
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2015,11.42
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2016,10.85
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2017,11.47
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2018,13.14
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2019,11.74
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2020,12.69
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2021,11.78
+Nigeria,NGA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,2022,12.38
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2010,60.06
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2011,58.97
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2012,60.79
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2013,60.47
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2014,60.06
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2015,61.13
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2016,61.68
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2017,61.82
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2018,60.86
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2019,61.71
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2020,62.35
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2021,62.81
+Nigeria,NGA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,2022,63.57

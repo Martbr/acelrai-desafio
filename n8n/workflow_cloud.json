@@ -1,0 +1,238 @@
+{
+  "name": "Agente de Monitoramento Educacional - 100% n8n Cloud",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 1,
+              "triggerAtHour": 7,
+              "triggerAtDay": [
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "id": "trigger-schedule",
+      "name": "Agendamento Semanal (Segunda 07h)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "trigger-manual",
+      "name": "Executar Manualmente (teste)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// =============================================================================\n// NÓ: \"Consultar World Bank + Analisar\" (n8n Code node, modo \"Run Once for All Items\")\n// =============================================================================\n// Reimplementação em JavaScript do pipeline Python (src/data_loader.py,\n// src/indicators.py, src/analysis.py, src/pipeline.py), para rodar 100%\n// dentro do n8n Cloud, sem precisar de nenhum arquivo local ou Python.\n//\n// Faz, nesta ordem:\n//   1. Consulta a API pública do World Bank (mesma fonte do dataset do Kaggle)\n//      para os países e indicadores configurados abaixo.\n//   2. Monta uma grade completa de anos por país/indicador e faz interpolação\n//      linear dos anos faltantes (equivalente a handle_missing_values do Python).\n//   3. Calcula agregações, rankings, crescimento (%) e CAGR, e classifica cada\n//      série como \"evoluiu\" / \"estagnado\" / \"regrediu\".\n//   4. Gera: (a) CSV final consolidado, (b) CSV de crescimento, e (c) um\n//      resumo estruturado compacto para enviar à IA (equivalente ao\n//      summary_for_ai.json do projeto Python).\n//\n// Saída: um único item com { finalCsv, growthCsv, summary }.\n\nconst INDICATORS = {\n  \"SE.XPD.TOTL.GD.ZS\": \"Gasto público em educação (% do PIB)\",\n  \"SE.XPD.TOTL.GB.ZS\": \"Gasto público em educação (% do gasto público total)\",\n  \"SE.PRM.ENRR\": \"Matrícula no ensino primário (% bruto)\",\n  \"SE.SEC.ENRR\": \"Matrícula no ensino secundário (% bruto)\",\n  \"SE.TER.ENRR\": \"Matrícula no ensino superior (% bruto)\",\n  \"SE.ADT.LITR.ZS\": \"Taxa de alfabetização de adultos (%)\",\n};\n\nconst COUNTRIES = [\"BRA\", \"USA\", \"DEU\", \"JPN\", \"IND\", \"CHN\", \"ZAF\", \"ARG\", \"PRT\", \"NGA\"];\nconst MIN_YEAR = 2010;\nconst MAX_YEAR = 2022;\nconst TOP_N = 10;\nconst STAGNATION_THRESHOLD = 3.0;\n\n// -----------------------------------------------------------------------\n// 1) Consulta à API do World Bank\n// -----------------------------------------------------------------------\nasync function fetchIndicator(indicatorCode) {\n  const url = `https://api.worldbank.org/v2/country/${COUNTRIES.join(\";\")}/indicator/${indicatorCode}`;\n  const allRecords = [];\n  let page = 1;\n\n  while (true) {\n    const response = await this.helpers.httpRequest({\n      method: \"GET\",\n      url,\n      qs: { format: \"json\", date: `${MIN_YEAR}:${MAX_YEAR}`, per_page: 1000, page },\n      json: true,\n    });\n\n    if (!response || !Array.isArray(response) || response.length < 2 || !response[1]) break;\n    const [meta, records] = response;\n    allRecords.push(...records);\n\n    if (page >= (meta.pages || 1)) break;\n    page += 1;\n  }\n  return allRecords;\n}\n\nfunction recordsToRows(records) {\n  return records.map((r) => ({\n    country_name: r.country.value,\n    country_code: r.countryiso3code || r.country.id,\n    indicator_code: r.indicator.id,\n    year: parseInt(r.date, 10),\n    value: r.value === null || r.value === undefined ? null : parseFloat(r.value),\n  }));\n}\n\n// -----------------------------------------------------------------------\n// 2) Grade completa de anos + interpolação linear (tratamento de ausentes)\n// -----------------------------------------------------------------------\nfunction interpolateGroup(yearRows) {\n  const values = yearRows.map((r) => r.value);\n  const known = [];\n  for (let i = 0; i < values.length; i++) if (values[i] !== null) known.push(i);\n  if (known.length === 0) return yearRows.map((r) => ({ ...r, value: null }));\n\n  for (let i = 0; i < values.length; i++) {\n    if (values[i] !== null) continue;\n    let prev = null;\n    let next = null;\n    for (const k of known) {\n      if (k < i) prev = k;\n      if (k > i && next === null) next = k;\n    }\n    if (prev !== null && next !== null) {\n      const frac = (i - prev) / (next - prev);\n      values[i] = values[prev] + (values[next] - values[prev]) * frac;\n    } else if (prev !== null) {\n      values[i] = values[prev];\n    } else if (next !== null) {\n      values[i] = values[next];\n    }\n  }\n  return yearRows.map((r, i) => ({ ...r, value: values[i] }));\n}\n\nfunction cleanAndFillMissing(rawRows) {\n  // Agrupa por país+indicador\n  const groups = {};\n  for (const r of rawRows) {\n    const key = `${r.country_code}|${r.indicator_code}`;\n    if (!groups[key]) {\n      groups[key] = { country_name: r.country_name, country_code: r.country_code, indicator_code: r.indicator_code, byYear: {} };\n    }\n    groups[key].byYear[r.year] = r.value;\n  }\n\n  const finalRows = [];\n  for (const key of Object.keys(groups)) {\n    const g = groups[key];\n    const yearRows = [];\n    for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {\n      yearRows.push({\n        country_name: g.country_name,\n        country_code: g.country_code,\n        indicator_code: g.indicator_code,\n        year,\n        value: Object.prototype.hasOwnProperty.call(g.byYear, year) ? g.byYear[year] : null,\n      });\n    }\n    const interpolated = interpolateGroup(yearRows);\n    const stillMissing = interpolated.some((r) => r.value === null);\n    if (stillMissing) continue; // série sem nenhum dado observável - descarta\n    finalRows.push(...interpolated);\n  }\n  return finalRows;\n}\n\n// -----------------------------------------------------------------------\n// 3) Agregações, rankings, crescimento/CAGR, classificação de tendência\n// -----------------------------------------------------------------------\nfunction classifyTrend(pctChange) {\n  if (pctChange === null || Number.isNaN(pctChange)) return \"indefinido\";\n  if (pctChange > STAGNATION_THRESHOLD) return \"evoluiu\";\n  if (pctChange < -STAGNATION_THRESHOLD) return \"regrediu\";\n  return \"estagnado\";\n}\n\nfunction calculateGrowth(rows) {\n  const groups = {};\n  for (const r of rows) {\n    const key = `${r.country_code}|${r.indicator_code}`;\n    if (!groups[key]) groups[key] = [];\n    groups[key].push(r);\n  }\n\n  const results = [];\n  for (const key of Object.keys(groups)) {\n    const group = groups[key].sort((a, b) => a.year - b.year);\n    if (group.length < 2) continue;\n    const first = group[0];\n    const last = group[group.length - 1];\n    const nYears = last.year - first.year;\n\n    const absChange = last.value - first.value;\n    const pctChange = first.value !== 0 ? (absChange / first.value) * 100 : null;\n\n    let cagr = null;\n    if (nYears > 0 && first.value > 0 && last.value > 0) {\n      cagr = (Math.pow(last.value / first.value, 1 / nYears) - 1) * 100;\n    }\n\n    results.push({\n      country_name: first.country_name,\n      country_code: first.country_code,\n      indicator_code: first.indicator_code,\n      first_year: first.year,\n      last_year: last.year,\n      first_value: Math.round(first.value * 100) / 100,\n      last_value: Math.round(last.value * 100) / 100,\n      abs_change: Math.round(absChange * 100) / 100,\n      pct_change: pctChange !== null ? Math.round(pctChange * 100) / 100 : null,\n      cagr_pct: cagr !== null ? Math.round(cagr * 100) / 100 : null,\n      trend: classifyTrend(pctChange),\n    });\n  }\n  return results;\n}\n\nfunction aggregateByCountryIndicator(rows) {\n  const groups = {};\n  for (const r of rows) {\n    const key = `${r.country_code}|${r.indicator_code}`;\n    if (!groups[key]) groups[key] = { country_name: r.country_name, country_code: r.country_code, indicator_code: r.indicator_code, values: [] };\n    groups[key].values.push(r.value);\n  }\n  return Object.values(groups).map((g) => {\n    const mean = g.values.reduce((a, b) => a + b, 0) / g.values.length;\n    return {\n      country_name: g.country_name,\n      country_code: g.country_code,\n      indicator_code: g.indicator_code,\n      mean_value: Math.round(mean * 100) / 100,\n      min_value: Math.round(Math.min(...g.values) * 100) / 100,\n      max_value: Math.round(Math.max(...g.values) * 100) / 100,\n    };\n  });\n}\n\nfunction rankCountriesByIndicator(rows, indicatorCode, topN = TOP_N) {\n  const subset = rows.filter((r) => r.indicator_code === indicatorCode);\n  const latestByCountry = {};\n  for (const r of subset) {\n    const key = r.country_code;\n    if (!latestByCountry[key] || r.year > latestByCountry[key].year) latestByCountry[key] = r;\n  }\n  const ranked = Object.values(latestByCountry).sort((a, b) => b.value - a.value);\n  return ranked.slice(0, topN).map((r, i) => ({\n    rank: i + 1,\n    country_name: r.country_name,\n    country_code: r.country_code,\n    year: r.year,\n    value: r.value,\n  }));\n}\n\n// -----------------------------------------------------------------------\n// 4) CSV helper\n// -----------------------------------------------------------------------\nfunction toCsv(rows, columns) {\n  const header = columns.join(\",\");\n  const lines = rows.map((r) =>\n    columns\n      .map((c) => {\n        const v = r[c] === null || r[c] === undefined ? \"\" : r[c];\n        const s = String(v);\n        return s.includes(\",\") ? `\"${s}\"` : s;\n      })\n      .join(\",\")\n  );\n  return [header, ...lines].join(\"\\n\");\n}\n\n// -----------------------------------------------------------------------\n// Execução principal\n// -----------------------------------------------------------------------\nlet rawRows = [];\nconst failedIndicators = [];\n\nfor (const indicatorCode of Object.keys(INDICATORS)) {\n  try {\n    const records = await fetchIndicator.call(this, indicatorCode);\n    rawRows.push(...recordsToRows(records));\n  } catch (err) {\n    failedIndicators.push(indicatorCode);\n  }\n}\n\nif (rawRows.length === 0) {\n  throw new Error(\n    \"Nenhum dado retornado pela API do World Bank para nenhum indicador. Verifique conectividade do n8n Cloud.\"\n  );\n}\n\nconst cleanedRows = cleanAndFillMissing(rawRows);\nconst growth = calculateGrowth(cleanedRows);\nconst aggregation = aggregateByCountryIndicator(cleanedRows);\n\nconst rankings = {};\nfor (const indicatorCode of Object.keys(INDICATORS)) {\n  rankings[indicatorCode] = rankCountriesByIndicator(cleanedRows, indicatorCode);\n}\n\nconst topGrowth = [...growth].sort((a, b) => (b.pct_change ?? -Infinity) - (a.pct_change ?? -Infinity)).slice(0, TOP_N);\nconst topDecline = [...growth].sort((a, b) => (a.pct_change ?? Infinity) - (b.pct_change ?? Infinity)).slice(0, TOP_N);\nconst stagnant = growth.filter((g) => g.trend === \"estagnado\").slice(0, TOP_N);\nconst topInvestment = aggregation\n  .filter((a) => a.indicator_code === \"SE.XPD.TOTL.GD.ZS\")\n  .sort((a, b) => b.mean_value - a.mean_value)\n  .slice(0, TOP_N)\n  .map((a) => ({ country_name: a.country_name, mean_value: a.mean_value }));\n\nconst summary = {\n  period_covered: { min_year: MIN_YEAR, max_year: MAX_YEAR },\n  countries_analyzed: [...new Set(cleanedRows.map((r) => r.country_name))].sort(),\n  indicators_analyzed: Object.keys(INDICATORS),\n  indicators_failed: failedIndicators,\n  top_growth: topGrowth,\n  top_decline: topDecline,\n  stagnant_examples: stagnant,\n  top_investment_pct_gdp: topInvestment,\n  rankings_by_indicator: rankings,\n};\n\nconst finalCsv = toCsv(cleanedRows, [\"country_name\", \"country_code\", \"indicator_code\", \"year\", \"value\"]);\nconst growthCsv = toCsv(growth, [\n  \"country_name\",\n  \"country_code\",\n  \"indicator_code\",\n  \"first_year\",\n  \"last_year\",\n  \"first_value\",\n  \"last_value\",\n  \"abs_change\",\n  \"pct_change\",\n  \"cagr_pct\",\n  \"trend\",\n]);\n\nreturn [{ json: { summary, finalCsv, growthCsv } }];\n"
+      },
+      "id": "fetch-and-analyze",
+      "name": "Consultar World Bank + Analisar",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        380
+      ],
+      "notes": "Busca os 6 indicadores para os 10 países configurados diretamente na API pública do World Bank, faz limpeza + interpolação de valores ausentes, agregações, rankings e cálculo de crescimento/CAGR. Tudo em JavaScript puro, sem depender de Python."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// =============================================================================\n// NÓ: \"Montar Prompt para a IA\" (n8n Code node, modo \"Run Once for All Items\")\n// =============================================================================\n// Recebe o item vindo do nó anterior (\"Consultar World Bank + Analisar\"),\n// que contém $json.summary, e monta o corpo da requisição para a API do\n// Claude (mesmo prompt usado em src/ai_report.py e prompts/executive_report_prompt.md).\n\nconst summary = $input.first().json.summary;\n\nconst systemPrompt = `Você é um analista sênior de políticas educacionais internacionais, atuando para um organismo multilateral. Sua função é interpretar indicadores educacionais de diferentes países e produzir inteligência acionável para tomadores de decisão — não apenas descrever números.\n\nRegras obrigatórias:\n- Nunca apenas repita ou resuma os números recebidos; sempre acrescente interpretação, hipóteses causais plausíveis e implicações práticas.\n- Identifique explicitamente: países que mais evoluíram, países estagnados ou em regressão, países com maior investimento relativo, países com melhores indicadores absolutos.\n- Para cada padrão identificado, proponha possíveis explicações (ex: crises econômicas, reformas educacionais, mudanças demográficas) deixando claro quando é hipótese e não fato comprovado pelos dados.\n- Termine com recomendações concretas e priorizadas.\n- Seja direto, use linguagem executiva, evite jargão técnico desnecessário.`;\n\nconst userPrompt = `Abaixo está um resumo estruturado (JSON) com indicadores educacionais de múltiplos países, já processados (rankings, crescimento, agregações).\n\nGere um RELATÓRIO EXECUTIVO em Markdown com as seções:\n\n1. Panorama geral (2-3 parágrafos)\n2. Países em destaque (maior evolução, com hipóteses do porquê)\n3. Países estagnados ou em regressão (com hipóteses do porquê)\n4. Investimento vs. resultado (quem investe mais e o retorno aparente)\n5. Melhores indicadores absolutos (não confundir com crescimento: quais países têm hoje os melhores números em termos absolutos em cada indicador, usando os rankings fornecidos)\n6. Comparações relevantes entre países\n7. Recomendações (priorizadas, acionáveis)\n\nDados:\n\\`\\`\\`json\n${JSON.stringify(summary, null, 2)}\n\\`\\`\\``;\n\nreturn [\n  {\n    json: {\n      model: \"claude-sonnet-4-6\",\n      max_tokens: 4000,\n      system: systemPrompt,\n      messages: [{ role: \"user\", content: userPrompt }],\n    },\n  },\n];\n"
+      },
+      "id": "build-prompt",
+      "name": "Montar Prompt para a IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "call-claude",
+      "name": "Chamar API do Claude (análise executiva)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        380
+      ],
+      "notes": "Credencial 'Header Auth' com header 'x-api-key' = sua ANTHROPIC_API_KEY. Configurar em Credentials > New > Header Auth, e selecionar aqui em Authentication > Generic Credential Type."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// =============================================================================\n// NÓ: \"Extrair Relatório da Resposta\" (n8n Code node, modo \"Run Once for All Items\")\n// =============================================================================\n// Recebe a resposta bruta da API do Claude (nó HTTP Request anterior) e\n// extrai o texto do relatório em Markdown, pronto para ser salvo.\n\nconst response = $input.first().json;\nconst textBlocks = (response.content || []).filter((b) => b.type === \"text\");\nconst reportText = textBlocks.map((b) => b.text).join(\"\\n\");\n\nconst now = new Date();\nconst timestamp = now.toISOString().slice(0, 10);\nconst header = `# Relatório Executivo - Indicadores Educacionais\\n\\n_Gerado automaticamente em ${timestamp} via n8n Cloud_\\n\\n---\\n\\n`;\n\nreturn [\n  {\n    json: {\n      fileName: `executive_report_${timestamp}.md`,\n      content: header + reportText,\n    },\n  },\n];\n"
+      },
+      "id": "extract-report",
+      "name": "Extrair Relatório da Resposta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// =============================================================================\n// NÓ: \"Montar Relatório HTML com Gráficos\" (n8n Code node, \"Run Once for All Items\")\n// =============================================================================\n// Versão com gráficos em PNG DE VERDADE (via QuickChart.io, serviço gratuito,\n// sem necessidade de conta/chave para este uso), em vez de SVG.\n//\n// Motivo da troca: a maioria dos clientes de e-mail (Gmail incluso) NÃO\n// renderiza <svg> dentro do corpo do e-mail, por restrição de segurança.\n// PNG funciona em qualquer lugar. Os gráficos são gerados chamando a API\n// pública do QuickChart (POST /chart/create), que devolve uma URL de\n// imagem estável — essa URL é embutida como <img src=\"...\">.\n//\n// Recebe o texto em Markdown gerado pela IA (nó anterior: \"Extrair Relatório\n// da Resposta\") e o resumo estruturado original (nó \"Consultar World Bank +\n// Analisar\", acessado por referência cruzada via $()).\n//\n// Saída: { fileName, htmlContent } pronto para: (a) enviar por e-mail como\n// corpo HTML, e/ou (b) salvar/anexar como arquivo .html.\n\nconst COLOR_GROWTH = \"#2E7D32\";\nconst COLOR_DECLINE = \"#C62828\";\nconst COLOR_ACCENT = \"#1565C0\";\nconst COLOR_GOLD = \"#B8860B\";\n\n// ---- 1) Cria um gráfico no QuickChart e devolve a URL da imagem ----\nasync function createChartUrl(chartConfig, width, height) {\n  try {\n    const response = await this.helpers.httpRequest({\n      method: \"POST\",\n      url: \"https://quickchart.io/chart/create\",\n      body: {\n        chart: chartConfig,\n        width,\n        height,\n        backgroundColor: \"white\",\n        devicePixelRatio: 2.0,\n      },\n      json: true,\n    });\n    if (response && response.success && response.url) {\n      return response.url;\n    }\n  } catch (err) {\n    // Se o QuickChart falhar (indisponível, rate limit, etc.), o relatório\n    // ainda deve ser gerado - só sem esse gráfico específico.\n  }\n  return null;\n}\n\nasync function barChartImg(title, items, labelKey, valueKey, color, xLabel) {\n  if (!items || items.length === 0) {\n    return `<p><em>Sem dados suficientes para o gráfico \"${title}\".</em></p>`;\n  }\n  const config = {\n    type: \"horizontalBar\",\n    data: {\n      labels: items.map((i) => String(i[labelKey]).slice(0, 20)),\n      datasets: [\n        {\n          label: xLabel || title,\n          data: items.map((i) => i[valueKey] ?? 0),\n          backgroundColor: items.map((i) => (i[valueKey] >= 0 ? color : COLOR_DECLINE)),\n        },\n      ],\n    },\n    options: {\n      title: { display: true, text: title, fontSize: 16 },\n      legend: { display: false },\n      scales: {\n        xAxes: [{ scaleLabel: { display: !!xLabel, labelString: xLabel } }],\n      },\n    },\n  };\n  const height = Math.max(220, items.length * 42 + 60);\n  const url = await createChartUrl.call(this, config, 600, height);\n  if (!url) {\n    return `<p><em>Gráfico \"${title}\" temporariamente indisponível.</em></p>`;\n  }\n  return `<img src=\"${url}\" alt=\"${title}\" style=\"max-width:100%;border-radius:8px;display:block;margin:0 auto;\" />`;\n}\n\nasync function scatterChartImg(title, points, xLabel, yLabel) {\n  if (!points || points.length === 0) {\n    return `<p><em>Sem dados suficientes para o gráfico \"${title}\".</em></p>`;\n  }\n  const config = {\n    type: \"scatter\",\n    data: {\n      datasets: [\n        {\n          label: title,\n          data: points.map((p) => ({ x: p.x, y: p.y })),\n          backgroundColor: COLOR_ACCENT,\n          pointRadius: 6,\n        },\n      ],\n    },\n    options: {\n      title: { display: true, text: title, fontSize: 16 },\n      legend: { display: false },\n      scales: {\n        xAxes: [{ scaleLabel: { display: true, labelString: xLabel } }],\n        yAxes: [{ scaleLabel: { display: true, labelString: yLabel } }],\n      },\n    },\n  };\n  const url = await createChartUrl.call(this, config, 520, 380);\n  const imgHtml = url\n    ? `<img src=\"${url}\" alt=\"${title}\" style=\"max-width:100%;border-radius:8px;display:block;margin:0 auto;\" />`\n    : `<p><em>Gráfico \"${title}\" temporariamente indisponível.</em></p>`;\n\n  // QuickChart (config simples acima) não rotula cada ponto com o nome do\n  // país - por isso, incluímos uma legenda em tabela HTML logo abaixo, para\n  // não perder essa informação mesmo se o gráfico não rotular os pontos.\n  const legendRows = points\n    .map((p) => `<tr><td>${p.label}</td><td>${p.x}</td><td>${p.y}</td></tr>`)\n    .join(\"\");\n  const legendTable = `\n    <table style=\"width:100%; font-size:12px; margin-top:8px; border-collapse:collapse;\">\n      <tr style=\"background:#F1F8F2;\"><th style=\"text-align:left;padding:4px 8px;\">País</th><th style=\"text-align:left;padding:4px 8px;\">${xLabel}</th><th style=\"text-align:left;padding:4px 8px;\">${yLabel}</th></tr>\n      ${legendRows}\n    </table>`;\n\n  return imgHtml + legendTable;\n}\n\n// ---- 2) Conversor simples de Markdown para HTML ----\nfunction markdownToHtml(md) {\n  const lines = md.split(\"\\n\");\n  let html = \"\";\n  let inList = false;\n\n  for (const rawLine of lines) {\n    const line = rawLine.trim();\n\n    if (line === \"\") {\n      if (inList) {\n        html += \"</ul>\\n\";\n        inList = false;\n      }\n      continue;\n    }\n\n    const headerMatch = line.match(/^(#{1,3})\\s+(.*)/);\n    if (headerMatch) {\n      if (inList) {\n        html += \"</ul>\\n\";\n        inList = false;\n      }\n      const level = headerMatch[1].length + 1;\n      html += `<h${level}>${inlineFormat(headerMatch[2])}</h${level}>\\n`;\n      continue;\n    }\n\n    const listMatch = line.match(/^[-*]\\s+(.*)/);\n    if (listMatch) {\n      if (!inList) {\n        html += \"<ul>\\n\";\n        inList = true;\n      }\n      html += `<li>${inlineFormat(listMatch[1])}</li>\\n`;\n      continue;\n    }\n\n    if (line === \"---\") {\n      if (inList) {\n        html += \"</ul>\\n\";\n        inList = false;\n      }\n      html += \"<hr/>\\n\";\n      continue;\n    }\n\n    if (inList) {\n      html += \"</ul>\\n\";\n      inList = false;\n    }\n    html += `<p>${inlineFormat(line)}</p>\\n`;\n  }\n  if (inList) html += \"</ul>\\n\";\n  return html;\n}\n\nfunction inlineFormat(text) {\n  return text.replace(/\\*\\*(.+?)\\*\\*/g, \"<strong>$1</strong>\").replace(/\\*(.+?)\\*/g, \"<em>$1</em>\");\n}\n\n// ---- 3) Cartões de KPI ----\nfunction kpiCardsHtml(summary) {\n  const period = summary.period_covered;\n  const nCountries = summary.countries_analyzed.length;\n  const topGrower = summary.top_growth && summary.top_growth[0];\n  const topDecliner = summary.top_decline && summary.top_decline[0];\n  const topInvestor = summary.top_investment_pct_gdp && summary.top_investment_pct_gdp[0];\n\n  const card = (label, value, sub, color) => `\n    <div class=\"kpi-card\">\n      <div class=\"kpi-label\">${label}</div>\n      <div class=\"kpi-value\" style=\"color:${color}\">${value}</div>\n      <div class=\"kpi-sub\">${sub}</div>\n    </div>`;\n\n  let html = card(\"Período analisado\", `${period.min_year}–${period.max_year}`, `${nCountries} países`, \"#333\");\n  if (topGrower) {\n    html += card(\"Maior crescimento\", `+${topGrower.pct_change}%`, `${topGrower.country_name} (${topGrower.indicator_code})`, COLOR_GROWTH);\n  }\n  if (topDecliner) {\n    html += card(\"Maior queda\", `${topDecliner.pct_change}%`, `${topDecliner.country_name} (${topDecliner.indicator_code})`, COLOR_DECLINE);\n  }\n  if (topInvestor) {\n    html += card(\"Maior investimento (% PIB)\", `${topInvestor.mean_value}%`, topInvestor.country_name, COLOR_GOLD);\n  }\n  return `<div class=\"kpi-grid\">${html}</div>`;\n}\n\n// ---- 4) Junta dois rankings pelo country_code (para o gráfico de dispersão) ----\nfunction joinRankings(summary, indicatorX, indicatorY) {\n  const rankX = {};\n  (summary.rankings_by_indicator[indicatorX] || []).forEach((r) => (rankX[r.country_code] = r));\n  const rankY = {};\n  (summary.rankings_by_indicator[indicatorY] || []).forEach((r) => (rankY[r.country_code] = r));\n\n  const commonCodes = Object.keys(rankX).filter((c) => rankY[c]);\n  return commonCodes.map((c) => ({\n    label: rankX[c].country_name,\n    x: rankX[c].value,\n    y: rankY[c].value,\n  }));\n}\n\n// ---- 5) Montagem do documento final ----\nconst reportItem = $input.first().json; // { fileName, content } vindo do nó anterior\nconst summary = $(\"Consultar World Bank + Analisar\").item.json.summary;\n\nconst kpiHtml = kpiCardsHtml(summary);\n\nconst growthChart = await barChartImg.call(\n  this,\n  \"Maior crescimento no período (%)\",\n  summary.top_growth.slice(0, 8),\n  \"country_name\",\n  \"pct_change\",\n  COLOR_GROWTH,\n  \"% de variação\"\n);\nconst declineChart = await barChartImg.call(\n  this,\n  \"Maior queda no período (%)\",\n  summary.top_decline.slice(0, 8),\n  \"country_name\",\n  \"pct_change\",\n  COLOR_DECLINE,\n  \"% de variação\"\n);\nconst investmentChart = await barChartImg.call(\n  this,\n  \"Maior investimento médio (% do PIB)\",\n  summary.top_investment_pct_gdp.slice(0, 8),\n  \"country_name\",\n  \"mean_value\",\n  COLOR_GOLD,\n  \"% do PIB\"\n);\n\nconst absoluteIndicator = summary.rankings_by_indicator[\"SE.TER.ENRR\"]\n  ? \"SE.TER.ENRR\"\n  : Object.keys(summary.rankings_by_indicator)[0];\nconst absoluteChart = absoluteIndicator\n  ? await barChartImg.call(\n      this,\n      `Melhores indicadores absolutos — ${absoluteIndicator}`,\n      summary.rankings_by_indicator[absoluteIndicator].slice(0, 8),\n      \"country_name\",\n      \"value\",\n      COLOR_ACCENT,\n      \"Valor do indicador\"\n    )\n  : \"\";\n\nlet scatterChart = \"\";\nif (summary.rankings_by_indicator[\"SE.XPD.TOTL.GD.ZS\"] && summary.rankings_by_indicator[\"SE.TER.ENRR\"]) {\n  const points = joinRankings(summary, \"SE.XPD.TOTL.GD.ZS\", \"SE.TER.ENRR\");\n  scatterChart = await scatterChartImg.call(\n    this,\n    \"Investimento (% PIB) vs. Matrícula ensino superior\",\n    points,\n    \"Investimento médio (% do PIB)\",\n    \"Matrícula ensino superior (%)\"\n  );\n}\n\nconst analysisHtml = markdownToHtml(reportItem.content);\n\nconst now = new Date();\nconst generatedAt = now.toLocaleString(\"pt-BR\");\n\nconst chartCard = (html) => (html ? `<div class=\"chart-card\">${html}</div>` : \"\");\n\nconst fullHtml = `<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"UTF-8\" />\n<title>Relatório Executivo - Indicadores Educacionais</title>\n<style>\n  body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; color: #222; max-width: 960px; margin: 0 auto; padding: 28px; line-height: 1.6; background: #fff; }\n  .header { background: linear-gradient(135deg, #1B5E20, #2E7D32); color: white; padding: 26px 30px; border-radius: 12px; margin-bottom: 26px; }\n  .header h1 { margin: 0 0 6px 0; font-size: 24px; }\n  .header .subtitle { opacity: 0.9; font-size: 13px; }\n  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 28px; }\n  .kpi-card { background: #F8F9FA; border: 1px solid #EEE; border-radius: 10px; padding: 14px; text-align: center; }\n  .kpi-label { font-size: 11px; color: #777; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; }\n  .kpi-value { font-size: 21px; font-weight: 700; }\n  .kpi-sub { font-size: 11.5px; color: #999; margin-top: 3px; }\n  .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; margin-bottom: 12px; }\n  .chart-card { background: #FAFAFA; border: 1px solid #EEE; border-radius: 10px; padding: 12px; }\n  h2 { font-size: 19px; color: #1B5E20; margin-top: 30px; border-bottom: 2px solid #E8F5E9; padding-bottom: 6px; }\n  h3 { font-size: 15px; color: #2E7D32; margin-top: 20px; }\n  hr { border: none; border-top: 1px solid #DDD; margin: 22px 0; }\n  .meta { color: #666; font-size: 12.5px; margin-top: 22px; padding-top: 14px; border-top: 1px solid #EEE; }\n  ul { padding-left: 20px; }\n  li { margin-bottom: 6px; }\n  table td, table th { border: 1px solid #DDD; }\n</style>\n</head>\n<body>\n  <div class=\"header\">\n    <h1>📊 Relatório Executivo — Indicadores Educacionais</h1>\n    <div class=\"subtitle\">Agente Inteligente de Monitoramento Educacional · World Bank Education Statistics</div>\n  </div>\n\n  ${kpiHtml}\n\n  <h2>Visão geral em gráficos</h2>\n  <div class=\"charts-grid\">\n    ${chartCard(growthChart)}\n    ${chartCard(declineChart)}\n    ${chartCard(investmentChart)}\n    ${chartCard(absoluteChart)}\n  </div>\n  ${scatterChart ? `<div class=\"charts-grid\">${chartCard(scatterChart)}</div>` : \"\"}\n\n  ${analysisHtml}\n\n  <div class=\"meta\">\n    Gerado automaticamente via n8n Cloud + API do Claude em ${generatedAt}.<br/>\n    Gráficos renderizados via QuickChart.io — se algum não aparecer, seu cliente de\n    e-mail pode estar bloqueando imagens remotas por padrão (procure \"mostrar imagens\").\n  </div>\n</body>\n</html>`;\n\nconst fileName = reportItem.fileName.replace(/\\.md$/, \".html\");\n\nreturn [{ json: { fileName, htmlContent: fullHtml } }];\n"
+      },
+      "id": "build-html-report",
+      "name": "Montar Relatório HTML com Gráficos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        380
+      ],
+      "notes": "Gera cartões de KPI, 4 gráficos de barra e 1 de dispersão como IMAGENS PNG DE VERDADE via QuickChart.io (POST /chart/create, sem necessidade de conta/chave para este volume de uso). Trocamos de SVG para PNG porque a maioria dos clientes de e-mail (Gmail incluso) não renderiza <svg> no corpo do e-mail. Rate limit gratuito do QuickChart: 60 gráficos/min - bem acima do necessário aqui (5 por execução)."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// =============================================================================\n// NÓ: \"Preparar Anexo do Relatório\" (n8n Code node, \"Run Once for All Items\")\n// =============================================================================\n// O nó do Gmail (e o de e-mail em geral) só consegue anexar ARQUIVOS\n// BINÁRIOS, não texto puro. Este nó pega o HTML já pronto (campo\n// htmlContent, vindo do nó \"Montar Relatório HTML com Gráficos\") e usa o\n// helper nativo do n8n para transformá-lo num anexo binário de verdade,\n// mantendo também os campos originais (json) para uso no corpo do e-mail.\n\nconst item = $input.first().json;\n\nconst buffer = Buffer.from(item.htmlContent, \"utf-8\");\nconst binaryData = await this.helpers.prepareBinaryData(buffer, item.fileName, \"text/html\");\n\nreturn [\n  {\n    json: item, // mantém fileName e htmlContent disponíveis para o nó do Gmail\n    binary: {\n      report: binaryData, // nome usado no campo \"Input Data Field Name\" do anexo, no Gmail\n    },\n  },\n];\n"
+      },
+      "id": "prepare-attachment",
+      "name": "Preparar Anexo do Relatório",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        380
+      ],
+      "notes": "Transforma o HTML (texto) em um anexo binário de verdade, usando o helper nativo this.helpers.prepareBinaryData do n8n. O anexo fica disponível na propriedade binária 'report' - use esse nome no campo de anexo do seu nó de e-mail/Gmail."
+    }
+  ],
+  "connections": {
+    "Agendamento Semanal (Segunda 07h)": {
+      "main": [
+        [
+          {
+            "node": "Consultar World Bank + Analisar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Executar Manualmente (teste)": {
+      "main": [
+        [
+          {
+            "node": "Consultar World Bank + Analisar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar World Bank + Analisar": {
+      "main": [
+        [
+          {
+            "node": "Montar Prompt para a IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar Prompt para a IA": {
+      "main": [
+        [
+          {
+            "node": "Chamar API do Claude (análise executiva)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chamar API do Claude (análise executiva)": {
+      "main": [
+        [
+          {
+            "node": "Extrair Relatório da Resposta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extrair Relatório da Resposta": {
+      "main": [
+        [
+          {
+            "node": "Montar Relatório HTML com Gráficos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar Relatório HTML com Gráficos": {
+      "main": [
+        [
+          {
+            "node": "Preparar Anexo do Relatório",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Versão 100% n8n Cloud: gatilho -> Code node consulta a API do World Bank e faz toda a análise em JavaScript -> monta prompt -> chama API do Claude -> monta relatório HTML com gráficos SVG -> prepara anexo binário -> conecte seu próprio nó de Gmail/Email a partir daqui."
+  }
+}
